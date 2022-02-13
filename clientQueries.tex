@@ -9,6 +9,14 @@ query getAllUsers{
   }
 }
 ------------
+query getUserBiId{
+  user(id:"23131"){
+    lastName
+    firstName
+    email
+  }
+}
+---------------
 query getAllQuotes{
   quotes{
     name
@@ -16,3 +24,10 @@ query getAllQuotes{
   }
 }
 --------------
+query getQuoteByUser{
+  iquote(by:"4232"){
+    name
+    by
+  }
+}
+--------
