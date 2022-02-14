@@ -1,7 +1,7 @@
 import { quotes, users } from "./fakedb.js";
 import { randomBytes } from "crypto";
 import mongoose from "mongoose";
-const User = mongoose.model("User");
+// const User = mongoose.model("User");
 import bcrypt from "accepts";
 
 const resolvers = {
@@ -21,7 +21,6 @@ const resolvers = {
         throw new Error("User already exists with that email");
       }
       const hashedPassword = await bcrypt.hash(userNaw.password, 12);
-
       const newUser = new User({
         ...userNew,
         password: hashedPassword,
